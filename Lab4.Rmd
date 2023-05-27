@@ -1,7 +1,5 @@
 ---
-title: 'Assignment 4: Amran Ahmed'
-author: "Amran Ahmed"
-date: "04/03/2022"
+title: 'Lab 4: Amran A'
 output: pdf_document
 ---
 
@@ -109,7 +107,7 @@ quantile(twodatacombined$newcolumn, probs=c(0, 0.25, 0.5, 0.75, 1))
 ```
 
 #Recommended Actions 
-With the data gained from this report we’ve seen specific insights on total revenue per active cardholder. The government is advised to do further investigation on the top performing (highest revenue per cardholder) libraries logistial functioning information and their data to better understand their success and how to replicate that for other less performing libraries to improve their success..
+With the data gained from this report we’ve seen specific insights on total revenue per active cardholder. The government is advised to do further investigation on the top performing (highest revenue per cardholder) libraries logistial functioning information and their data to better understand their success and how to replicate that for other less performing libraries to improve their success.
 
 The insights gained from looking at the median and average operating revenue per number cardholder is the knowledge of how well a typical library is expected to perform on average operating revenue per number and the median tells the exact middle value for which any other value is either below or above that number. This insight into the data allows the organization to further visualize how the data is distributed and how high or low a library's operating revenue per number value is in comparison to other libraries.
 
