@@ -1,6 +1,5 @@
 ---
 title: "Lab3"
-author: "Amran A"
 output: pdf_document
 ---
 
