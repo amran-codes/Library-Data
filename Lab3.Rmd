@@ -1,0 +1,60 @@
+---
+title: "Lab3"
+output: pdf_document
+---
+
+#Importing datasets
+```{r}
+install.packages("tidyverse")
+library(tidyverse)
+
+#importing my data sets
+data2015 <- read.csv("2015_ontario_public_library_statistics_open_data_dec_2017rev.csv")
+
+data2016 <- read.csv("2016 ontario_public_library_statistics_open_data_2016.csv")
+
+data2017 <- read.csv("2017 ontario_public_library_statistics_open_data_july_2019_rev1.csv")
+
+```
+
+#Merged all files into one object
+```{r}
+#organizing my column names
+common_columns <- Reduce(intersect, list(colnames(data2015),colnames(data2016),colnames(data2017)))
+
+#combining my files data
+datacombined <- rbind(subset(data2015, select = common_columns), subset(data2016, select = common_columns), subset(data2017, select = common_columns))
+
+#removing the commas in values from combined data
+as.numeric(gsub(",", "", datacombined, fixed = TRUE))
+
+#removing any spaces in variable names
+make.names(datacombined) 
+
+#removing NA's
+na.omit(datacombined)
+
+
+```
+
+#Creating a new column that represents operating revenue per active card holder (total operating Revenue / number of active card holders).
+```{r}
+
+#Fixing improper formatting of  values including comma's in numbers
+datacombined$B2.9..Total.Operating.Revenues <- gsub(",", "", datacombined$B2.9..Total.Operating.Revenues)
+
+datacombined$A1.14..No..of.Active.Library.Cardholders <- gsub(",", "", datacombined$A1.14..No..of.Active.Library.Cardholders)
+
+
+
+
+#Identifying three key insights around this metric. These insights  follow a theme and build to my goal of providing a recommendation to your manager and sponsors on how libraries can be successful.
+
+#Guiding questions: How can the insights that I generate stitch together to create a logical, informative and actionable story line for my audience?”
+
+
+```
+
+
+#Submitted R script contains  the steps necessary to produce 3 key insights from data import to data preparation and exploration (next part lab 4).
+
